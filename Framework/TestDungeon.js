@@ -3,7 +3,7 @@
 
 function TestDungeon()
 {
-	localStorage.Position = "TestDungeon";
+	position.Get("TestDungeon");
 	
 	sceneBox.innerHTML = "Test"
 }

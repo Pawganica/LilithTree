@@ -7,14 +7,20 @@ var actionBox;
 //TODO: global event stream
 //TODO: location action wrapper
 //TODO: location description wrapper
+//TODO: Missed event wrapper - call module functions for missed events
 
-localStorage.Position = "TestDungeon";
+//localStorage.Position = "TestDungeon";
 
 var position = {
 	
-	get: function() {
-		return localStorage.LilithTree.Position;
+	Get: function() {
+		return localStorage.Position;
+	},
+	
+	Set: function(newPosition) {
+		localStorage.Position = newPosition;
 	}
+	
 
 }
 
@@ -26,11 +32,11 @@ function mainInit()
 	
 	charSheet.innerHTML = "Test";
 	
-	callFunction(localStorage.Position);
+	var initCurrentPosition = position.Get();
+	callFunction(initCurrentPosition);
 }
 
 function callFunction(functionName)
 {
-	//window[functionName](t.parentNode.id);
 	window[functionName]();
 }
