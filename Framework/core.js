@@ -4,7 +4,7 @@ var actionBox;
 
 //TODO: localStorage wrapper
 //TODO: time tracking
-//TODO: step cycle
+//TODO: step cycle - wrapper containing area desc and actions, modified by each section, and then a charsheet update
 //TODO: global event stream
 //TODO: location action wrapper
 //TODO: location description wrapper
