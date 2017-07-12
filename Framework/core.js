@@ -3,6 +3,7 @@ var sceneBox;
 var actionBox;
 
 //TODO: localStorage wrapper
+//TODO: time tracking
 //TODO: step cycle
 //TODO: global event stream
 //TODO: location action wrapper
