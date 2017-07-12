@@ -7,3 +7,4 @@ function TestDungeon()
 	
 	sceneBox.innerHTML = "Test"
 }
+
