@@ -1,9 +1,9 @@
 var cs = {
 	
 	
-	set Agility(x) {
-		localStorage.cs_Agility = x;
-	}
+	set Agility(newagility) {
+		localStorage.cs_Agility = newagility;
+	},
 	
 	get Agility() {
 		return localStorage.cs_Agility;

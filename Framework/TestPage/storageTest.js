@@ -25,8 +25,8 @@ function mainInit()
 		localStorage.Tester = "";
 	}
 	
-	storeWrap.a = "Test";
-	charSheet.innerHTML = storeWrap.a;
+	//storeWrap.a = "Test";
+	//charSheet.innerHTML = storeWrap.a;
 	
 
 	
