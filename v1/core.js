@@ -1,6 +1,8 @@
-var charSheet;
+var charBox;
 var sceneBox;
 var actionBox;
+
+var arrScene = [];
 
 //TODO: step cycle
 //TODO: global event stream
@@ -38,31 +40,72 @@ var core = {
 			var returnDate = new Date(localStorage.dateYear,localStorage.dateMonth,localStorage.dateDay,localStorage.dateHour,localStorage.dateMinute,localStorage.dateSecond);
 			return returnDate;
 		}
-	}
+	},
 	
 	addMinutes(minutesToAdd) {
 		var pointInTime = this.date;
 		var totalMilliseconds = minutesToAdd * 60000;
 		pointInTime.setTime(pointInTime.getTime() + totalMilliseconds);
 		this.date = pointInTime;
-	}
+	},
 
+	callFunction(functionName) {
+		window[functionName]();
+	}
+	
+}
+
+ 
+var mnscn = {
+	
+	buildCharBox() {
+		//TODO: build char sheet display
+	},
+	
+	
+	buildSceneBox() {  
+		
+		while (sceneBox.firstChild) {
+			sceneBox.removeChild(sceneBox.firstChild);
+		}
+		
+		var arrayLength = arrScene.length;
+		for (var i = 0; i < arrayLength; i++) {
+			var newNode = document.createElement('div');      
+			newNode.innerHTML = arrScene[i];
+			sceneBox.appendChild( newNode )
+		}
+		
+		arrScene.length = 0;
+	},
+	
+	
+	buildActionBox() {
+		//TODO: build action wrapper
+		//TODO: generic action wrapper
+	}
+	
+	
 }
 
 
 function mainInit()
 {
-	charSheet = document.getElementById("charsheet");
+	charBox = document.getElementById("charsheet");
 	sceneBox = document.getElementById("scenebox");
 	actionBox = document.getElementById("actionbox");
 	
-	charSheet.innerHTML = "Test";
+	arrScene.length = 0;
 	
 	var initCurrentPosition = core.pos;
-	callFunction(initCurrentPosition);
+	core.callFunction(initCurrentPosition);
+	
+	mnscn.buildSceneBox();
 }
 
-function callFunction(functionName)
+
+function startScreen()
 {
-	window[functionName]();
+	arrScene.push("You are in a maze of twisty passages, all alike.")
+	
 }
