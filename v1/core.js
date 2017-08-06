@@ -82,6 +82,8 @@ var core = {
 				localStorage.removeItem(point);
 			}
 		}
+		
+		mainInit()
 	}
 
 }
@@ -91,6 +93,11 @@ var mnscn = {
 	
 	buildCharBox() {
 		//TODO: build char sheet display
+		while (charBox.firstChild) {
+			charBox.removeChild(charBox.firstChild);
+		}
+		
+		
 	},
 	
 	buildSceneBox() {  
@@ -154,25 +161,94 @@ function mainInit()
 	core.callFunction(initCurrentPosition);
 }
 
-
+//Start sequence
 function startScreen()
 {
 	core.pos = "startScreen";
 	arrScene.push("<BR />");
 	arrScene.push("<BR />");
-	arrScene.push("Many say that the full moon is magical.");
+	arrScene.push("<center>Lilith Tree.</center>");
 	arrScene.push("<BR />");
-	arrScene.push("Others say that the <i>new</i> moon is the most magical. Full of promise, full of potential.");
 	
 	arrScene.push("<BR />");
 	arrScene.push("<BR />");
-	core.addAction("Wake up.","grueScreen");
+	core.addAction("Start new game.","grueScreen");
 	mnscn.turnOn();
 }
 
+
 function grueScreen()
 {
-	arrScene.push("You are about to be eaten by a grue.");
-	core.addAction("Run back to the passages","startScreen");
+	core.pos = "grueScreen";
+	arrScene.push("<BR />");
+	arrScene.push("<BR />");
+	arrScene.push("You hear a female voice. It's soothing, gentle, almost motherly.");
+	arrScene.push("<BR />");
+	arrScene.push("<BR />");
+	arrScene.push('"Many say that the full moon is magical."');
+	arrScene.push("<BR />");
+	arrScene.push('"Others say that the <i>new</i> moon is the most magical. Full of promise, full of potential."');
+	arrScene.push("<BR />");
+	arrScene.push("<BR />");
+	
+	core.addAction("Wake up.","grueScreen2");
 	mnscn.turnOn();
 }
+
+
+function grueScreen2()
+{
+	core.pos = "grueScreen2";
+	arrScene.push("<BR />");
+	arrScene.push("<BR />");
+	arrScene.push('"Those who <i>know</i> what they are talking about know that it is the half moon that is the most magical, the most powerful."');
+	arrScene.push("<BR />");
+	arrScene.push('"It is the point between that is the strongest. When something is neither one nor the other, when its place in reality is at its weakest."');
+	arrScene.push("<BR />");
+	arrScene.push("<BR />");
+	
+	core.addAction("Wake UP.","grueScreen3");
+	mnscn.turnOn();
+}
+
+
+function grueScreen3()
+{
+	core.pos = "grueScreen3";
+	arrScene.push("<BR />");
+	arrScene.push("<BR />");
+	arrScene.push("The voice continues. It sounds closer now. And then you can feel a presence... no, you can feel <i>her</i>.");
+	arrScene.push(" You can <i>feel</i> her, a warmth that closes around you.");
+	arrScene.push("<BR />");
+	arrScene.push('"That is when magic is the strongest, when there is no tension in something, when the leash hangs slack... that is when you can <i>Pull</i> "');
+	arrScene.push("<BR />");
+	arrScene.push("<BR />");
+	arrScene.push("An icy chill ripples down your spine, sudden, as shocking as an ice bath. Terror wells from nowhere, beyond mere fear, primal and horrific.");
+	
+	core.addAction("WAKE UP!.","awakenScreen");
+	mnscn.turnOn();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
